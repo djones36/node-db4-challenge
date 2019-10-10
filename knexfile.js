@@ -5,15 +5,21 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './dev.sqlite3'
-    }
+      filename: './database/file/cookbook.db3',
+    },
+    migrations: {
+      directory: './database/migrations',
+    },
+    seeds: {
+      directory: './database/seeds',
+    },
   },
 
   staging: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user:     'username',
+      database: 'cookbook',
+      user: 'username',
       password: 'password'
     },
     pool: {
@@ -21,15 +27,18 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      directory: './database/migrations',
+    },
+    seeds: {
+      directory: './database/seeds',
+    },
   },
 
   production: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user:     'username',
+      database: 'cookbook',
+      user: 'username',
       password: 'password'
     },
     pool: {
@@ -37,8 +46,11 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      directory: './database/migrations',
+    },
+    seeds: {
+      directory: './database/seeds',
+    },
   }
 
 };
