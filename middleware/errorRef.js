@@ -1,4 +1,4 @@
-// error middle ware for console log
+// error middleware (500) for console log
 const errorRef = error => {
     const hash = Math.random()
         .toString(36)
